@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="<?php echo CSS_URL; ?>bootstrap.css">
+	<title>test</title>
+	<style>
+		.container{
+			width: 400px;
+			height: 350px;
+			background-color: #F7F9DE;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			border: 1px solid black;
+			border-radius: 10px;
+		}
+		.code {
+			background-image:grey;
+			font-family: Arial;
+			font-style: italic;
+			color: Red;
+			border: 1px solid black;
+			padding: 2px 3px;
+			letter-spacing: 3px;
+			font-weight: bolder;
+		}
+		.unchanged {
+			border: 0;
+		}
+		.topfont{
+			position: absolute;
+			left: 50%;
+			top: 10%;
+			transform: translate(-50%,-50%);
+		}
+	</style>
+
+	<script language="javascript" type="text/javascript">  
+var code; //在全局 定义验证码   
+function createCode() {
+	code = "";
+    var codeLength = 4;//验证码的长度   
+    var checkCode = document.getElementById("checkCode");
+    var selectChar = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');//所有候选组成验证码的字符，当然也可以用中文的   
+
+    for (var i = 0; i < codeLength; i++) {
+    	var charIndex = Math.floor(Math.random() * 36);
+    	code += selectChar[charIndex];
+    }
+    //alert(code);
+    if (checkCode) {
+    	checkCode.className = "code";
+    	checkCode.value = code;
+    }
+}
+
+function validate() {
+	var inputCode = document.getElementById("input1").value;
+	if (inputCode.length <= 0) {
+		alert("请输入验证码！");
+	} else if (inputCode != code) {
+		alert("验证码输入错误！");
+    createCode();//刷新验证码   
+} else {
+	alert('验证码正确');
+}
+}
+	</script>
+
+</head>
+<body style="background:url('<?php echo IMG_URL;?>loginbg.jpg')" onload="createCode()">
+	<div class="bg">
+	<div class="topfont">
+	<h1 class="text-center" style="color:#F7F9DE">餐饮信息后台管理系统</h1>
+	</div>
+		<div class="container">
+			<h2 class="text-center"></h2><br>
+			<form role="form">
+				<div class="form-group">
+					<span class="glyphicon glyphicon-user "></span>
+					<STRONG>用户名</STRONG>					
+					<input type="text" placeholder="请输入用户名" id="user" class="form-control">
+				</div>
+				<div class="form-group">
+					<span class="glyphicon glyphicon-lock"></span>
+					<strong>密码</strong>
+					<input type="password" placeholder="请输入密码" id="pass" class="form-control">
+				</div><input type="checkbox" name="" id="">
+				<span>记住密码</span>
+
+				<input type="text"  onclick="createCode()" readonly="readonly" id="checkCode" class="unchanged" style="width: 60px;" />
+				<br>
+				<br>
+
+				<div class="form-group" >
+					<input type="text" placeholder="请输入验证码" id="input1" class="form-control">
+				</div>
+				<button type="submit" id="Button1" onclick="validate();" class="btn btn-primary btn-block">确定</button>
+
+			</div>
+		</form>
+	</div>
+</div>
+</body>
+</html>

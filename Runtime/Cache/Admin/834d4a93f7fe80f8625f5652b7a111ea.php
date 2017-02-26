@@ -1,0 +1,164 @@
+<?php if (!defined('THINK_PATH')) exit();?>﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="<?php echo CSS_URL?>bootstrap.css">
+	<link rel="stylesheet" href="<?php echo CSS_URL?>font-awesome.min.css">
+	<link rel="stylesheet" href="<?php echo CSS_URL?>Mycss/nav.css">
+	<script src="<?php echo JS_URL?>jquery-3.1.1.min.js"></script>
+	<script src="<?php echo JS_URL?>bootstrap.min.js"></script>
+	<title>餐饮后台管理系统</title>
+</head>
+<body>
+	<div id="wrapper">
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">餐饮信息管理系统</a>
+			</div>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav side-nav">
+					<li><a href="news.html"><i class="fa fa-envelope-open"></i> 新信息</a></li>
+					<li><a href="charts.html"><i class="fa fa-bar-chart-o"></i> 会员信息管理</a></li>
+          <li><a href="admin.html"><i class="fa fa-table"></i> 管理员信息管理</a></li>
+          <li class="active"><a href="table.html"><i class="fa fa-table"></i> 桌台信息管理</a></li>
+          <li><a href="forms.html"><i class="fa fa-edit"></i> 加盟店管理</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> 菜品信息管理<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#"> 喝</a></li>
+							<li><a href="#"> 酒</a></li>
+							<li><a href="#"> 不</a></li>
+							<li><a href="#"> 开</a></li>
+							<li><a href="#"> 车</a></li>
+						</ul>
+					</li>
+				</ul>
+				<div>
+					<form class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="网业内查找">
+						</div>
+						<button type="submit" class="btn btn-default">提交</button>
+					</form>
+				</div>
+				<ul class="nav navbar-nav navbar-right navbar-user">
+					<li class="dropdown user-dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> 管理员001<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#"><i class="fa fa-gear"></i> 修改密码</a></li>
+							<li class="divider"></li>
+							<li><a href="#"><i class="fa fa-power-off"></i> 登出</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</nav>
+
+	<div class="page-wrapper">
+
+		<div class="row">
+          <div class="col-lg-12">
+            <h1>中华一番 <small>餐饮信息管理系统</small></h1>
+            <ol class="breadcrumb">
+              <li class="active"><i class="fa fa-dashboard"></i> 信息统计</li>
+            </ol>           
+          </div>
+        </div><!-- /内容 -->
+
+        <div class="row">
+          <div class="col-lg-12">
+            <h2>菜品信息<button type="button" style="float:right" class="btn btn-success" data-toggle="modal" data-target="#myModal1"><i class="fa fa-plus-square" aria-hidden="true"></i>	添加信息</button></h2>
+            <div class="table-responsive">
+              <table class="table table-bordered table-hover tablesorter">
+                <thead>
+                  <tr>
+                    <td align="center" style="font-weight:bold;">编号 <i class="fa"></i></td>
+                    <td align="center" style="font-weight:bold;">菜名 <i class="fa"></i></th>
+                    <td align="center" style="font-weight:bold;">价格 <i class="fa"></i></th>
+                    <td align="center" style="font-weight:bold;">已定数量 <i class="fa"></i></th>
+                    <td align="center" style="font-weight:bold;">菜系 <i class="fa"></i></td>
+                    <td align="center" style="font-weight:bold;">操作 <i class="fa"></i></td>
+                  </tr>
+                </thead>
+                <tbody>
+                <?php if(is_array($dlist)): $i = 0; $__LIST__ = $dlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$ds): $mod = ($i % 2 );++$i;?><tr>
+                    <td  align="center" style="font-weight:bold;"><?php echo ($ds["dishes_no"]); ?></td>
+                    <td  align="center" style="font-weight:bold;"><?php echo ($ds["dishes_name"]); ?></td>
+                    <td  align="center" style="font-weight:bold;"><?php echo ($ds["dishes_price"]); ?></td>
+                    <td  align="center" style="font-weight:bold;"><?php echo ($ds["dishes_number"]); ?></td>
+                    <td  align="center" style="font-weight:bold;"><?php echo ($ds["dishes_style"]); ?></td>
+                    <td align="center"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">编辑</button>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title" id="myModalLabel">菜品信息</h4>
+         </div>
+         <div class="modal-body">
+<iframe id="bianji" src="<?php echo U('Admin/Dishes/bianji',array('dishes_no'=>$ds['dishes_no']));?>" frameborder="no" scrolling="no" width=322  height=360 style="">
+             </iframe>             
+            </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">关闭            </button>
+         </div>
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog --></div>
+
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h4 class="modal-title" id="myModalLabel">菜品信息</h4>
+         </div>
+         <div class="modal-body">
+<iframe id="tianjia" src="tianjia.html" frameborder="no" scrolling="no" width=322  height=360 style="">
+             </iframe>             
+            </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">关闭            </button>
+         </div>
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog --></div>
+
+                    <a type="button" href="<?php echo U('Admin/Dishes/del',array('dishes_no'=>$ds['dishes_no']));?>" class="btn btn-info">删除</a>
+                  </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+	</div>
+</div><!--导航栏-->
+<script>
+   $(function a() { $('#myModal1').modal('hide');});
+</script>
+<script>
+   $(function b() { $('#myModal1').on('hide.bs.modal', function () {
+      document.location.reload();})
+   });
+</script>
+<!-- <script>
+   $(function c() { $('#myModal').modal('hide');});
+</script>
+<script>
+   $(function d() { $('#myModal').on('hide.bs.modal', function () {
+      document.location.reload();})
+   });
+</script> -->
+</body>
+</html>

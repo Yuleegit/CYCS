@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="<?php echo CSS_URL?>bootstrap.css">
+	<link rel="stylesheet" href="<?php echo CSS_URL?>font-awesome.min.css">
+	<link rel="stylesheet" href="<?php echo CSS_URL?>Mycss/nav.css">
+	<script src="<?php echo JS_URL?>jquery-3.1.1.min.js"></script>
+	<script src="<?php echo JS_URL?>bootstrap.min.js"></script>
+	<title>餐饮后台管理系统</title>
+</head>
+<body>
+	<div id="wrapper">
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">餐饮信息管理系统</a>
+			</div>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav side-nav">
+					<li class="active"><a href="news.html"><i class="fa fa-envelope-open"></i> 新信息</a></li>
+					<li><a href="user.html"><i class="fa fa-bar-chart-o"></i> 会员信息管理</a></li>
+					<li><a href="table.html"><i class="fa fa-table"></i> 管理员信息管理</a></li>
+          <li><a href="table.html"><i class="fa fa-table"></i> 桌台信息管理</a></li>
+					<li><a href="brother.html"><i class="fa fa-edit"></i> 加盟店管理</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> 菜品信息管理<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#"> 喝</a></li>
+							<li><a href="#"> 酒</a></li>
+							<li><a href="#"> 不</a></li>
+							<li><a href="#"> 开</a></li>
+							<li><a href="#"> 车</a></li>
+						</ul>
+					</li>
+				</ul>
+				<div>
+					<form class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="网业内查找">
+						</div>
+						<button type="submit" class="btn btn-default">提交</button>
+					</form>
+				</div>
+				<ul class="nav navbar-nav navbar-right navbar-user">
+					<li class="dropdown user-dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> 管理员001<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="#"><i class="fa fa-gear"></i> 修改密码</a></li>
+							<li class="divider"></li>
+							<li><a href="#"><i class="fa fa-power-off"></i> 登出</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</nav>
+
+	<div class="page-wrapper">
+
+		<div class="row">
+          <div class="col-lg-12">
+            <h1>中华一番 <small>餐饮信息管理系统</small></h1>
+            <ol class="breadcrumb">
+              <li class="active"><i class="fa fa-envelope-open"></i> 待处理信息</li>
+            </ol>
+            <div class="alert alert-success alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              欢迎进入<a class="alert-link" href="http://startbootstrap.com">中华一番</a>餐饮信息管理系统！
+            </div>
+          </div>
+        </div><!-- /内容 -->
+
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-comments fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">56</p>
+                    <p class="announcement-text">新留言</p>
+                  </div>
+                </div>
+              </div>
+              <a href="#">
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      新留言
+                    </div>
+                    <div class="col-xs-6 text-right">
+                      <i class="fa fa-arrow-circle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="panel panel-warning">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-check fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">231</p>
+                    <p class="announcement-text">新订单</p>
+                  </div>
+                </div>
+              </div>
+              <a href="#">
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      新订单
+                    </div>
+                    <div class="col-xs-6 text-right">
+                      <i class="fa fa-arrow-circle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-user-plus fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">18</p>
+                    <p class="announcement-text">会员审核</p>
+                  </div>
+                </div>
+              </div>
+              <a href="#">
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      会员审核
+                    </div>
+                    <div class="col-xs-6 text-right">
+                      <i class="fa fa-arrow-circle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <i class="fa fa-times fa-5x"></i>
+                  </div>
+                  <div class="col-xs-6 text-right">
+                    <p class="announcement-heading">1</p>
+                    <p class="announcement-text">取消订单</p>
+                  </div>
+                </div>
+              </div>
+              <a href="#">
+                <div class="panel-footer announcement-bottom">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      取消订单
+                    </div>
+                    <div class="col-xs-6 text-right">
+                      <i class="fa fa-arrow-circle-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div><!-- /.row -->
+
+	</div>
+</div><!--导航栏-->
+</body>
+</html>

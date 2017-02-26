@@ -1,0 +1,39 @@
+[ 2017-02-26T18:11:31+08:00 ] 127.0.0.1 /CYCS/index.php/Admin/Dishes/bianji
+ERR: 参数错误或者未定义:dishes_no
+
+[ 2017-02-26T18:14:36+08:00 ] 127.0.0.1 /CYCS/index.php/Admin/Dishes/bianji
+ERR: 参数错误或者未定义:dishes_no
+
+[ 2017-02-26T18:15:46+08:00 ] 127.0.0.1 /CYCS/index.php/Admin/Dishes/bianji
+ERR: 参数错误或者未定义:dishes_no
+
+[ 2017-02-26T18:16:03+08:00 ] 127.0.0.1 /CYCS/index.php/Admin/Dishes/bianji
+ERR: 参数错误或者未定义:dishes_no
+
+[ 2017-02-26T18:16:11+08:00 ] 127.0.0.1 /CYCS/index.php/Admin/Dishes/bianji
+ERR: 参数错误或者未定义:dishes_no
+
+[ 2017-02-26T18:24:12+08:00 ] 127.0.0.1 /CYCS/index.php/Admin/Dishes/tianjia
+ERR: 1048:Column 'DISHES_NO' cannot be null
+ [ SQL语句 ] : INSERT INTO `cy_dishes` (`DISHES_NO`,`DISHES_NAME`,`DISHES_PRICE`,`DISHES_NUMBER`,`DISHES_STYLE`) VALUES (NULL,NULL,NULL,NULL,NULL)
+
+[ 2017-02-26T18:24:52+08:00 ] 127.0.0.1 /CYCS/index.php/Admin/Dishes/tianjia
+ERR: 1048:Column 'DISHES_NO' cannot be null
+ [ SQL语句 ] : INSERT INTO `cy_dishes` (`DISHES_NO`,`DISHES_NAME`,`DISHES_PRICE`,`DISHES_NUMBER`,`DISHES_STYLE`) VALUES (NULL,NULL,NULL,NULL,NULL)
+
+[ 2017-02-26T18:25:26+08:00 ] 127.0.0.1 /CYCS/index.php/Admin/Dishes/tianjia
+ERR: 1048:Column 'DISHES_NO' cannot be null
+ [ SQL语句 ] : INSERT INTO `cy_dishes` (`DISHES_NO`,`DISHES_NAME`,`DISHES_PRICE`,`DISHES_NUMBER`,`DISHES_STYLE`) VALUES (NULL,NULL,NULL,NULL,NULL)
+
+[ 2017-02-26T18:26:07+08:00 ] 127.0.0.1 /CYCS/index.php/Admin/Dishes/bianji
+ERR: 参数错误或者未定义:dishes_no
+
+[ 2017-02-26T18:49:02+08:00 ] 127.0.0.1 /CYCS/index.php/Admin/Dishes/bianji
+ERR: 参数错误或者未定义:dishes_no
+
+[ 2017-02-26T18:49:17+08:00 ] 127.0.0.1 /CYCS/index.php/Admin/Dishes/del
+ERR: 参数错误或者未定义:dishes_no
+
+[ 2017-02-26T18:49:32+08:00 ] 127.0.0.1 /CYCS/index.php/Admin/Dishes/dishes_no
+ERR: 非法操作:dishes_no
+
